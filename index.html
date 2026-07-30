@@ -14,7 +14,8 @@
                             verde: '#4A5D3E',
                             verdeHover: '#3B4B31',
                             castanha: '#8B5A2B',
-                            fundo: '#FAF8F5'
+                            fundo: '#FAF8F5',
+                            card: '#FFFFFF'
                         }
                     }
                 }
@@ -30,49 +31,45 @@
                 <span class="text-2xl">🌰</span>
                 <h1 class="text-xl font-bold text-brand-castanha tracking-tight">Castanhas da Dani</h1>
             </div>
-            <a href="#comprar" class="bg-brand-verde text-white px-5 py-2 rounded-full font-semibold hover:bg-brand-verdeHover transition-all text-sm shadow-sm">
-                Comprar Agora
-            </a>
+            <button onclick="irParaPagina1()" class="bg-brand-verde text-white px-5 py-2 rounded-full font-semibold hover:bg-brand-verdeHover transition-all text-sm shadow-sm">
+                Fazer Pedido
+            </button>
         </div>
     </header>
 
-    <main>
-        <section class="max-w-4xl mx-auto p-6 md:py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div class="relative group">
-                <div class="absolute -inset-1 bg-gradient-to-r from-brand-castanha to-brand-verde rounded-3xl blur opacity-25 group-hover:opacity-40 transition"></div>
-                <img id="foto-produto" src="https://images.unsplash.com/photo-1543208105-8605c5377751?auto=format&fit=crop&q=80&w=800" 
-                     alt="Castanhas Selecionadas" 
-                     class="relative rounded-2xl shadow-md w-full h-80 object-cover">
-            </div>
-            
-            <div class="space-y-4">
-                <span class="inline-block bg-brand-verde/10 text-brand-verde text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                    🌿 100% Natural & Artesanal
-                </span>
-                <h2 id="nome-produto" class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
-                    Castanha Premium Selecionada (500g)
-                </h2>
-                <p id="descricao-produto" class="text-gray-600 leading-relaxed text-sm md:text-base">
-                    Selecionadas à mão, torradas no ponto certo e embaladas com vedação especial para manter a crocância incomparável e o sabor natural. Ideal para um snack saudável no seu dia a dia.
-                </p>
-                <div class="flex items-baseline gap-2 pt-2">
-                    <span class="text-3xl font-extrabold text-brand-castanha">R$ <span id="preco-unitario">50,00</span></span>
-                    <span class="text-xs text-gray-500 uppercase font-semibold">/ Embalagem 500g</span>
+    <div id="pagina-1" class="block">
+        <main>
+            <section class="max-w-4xl mx-auto p-6 md:py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-castanha to-brand-verde rounded-3xl blur opacity-25 group-hover:opacity-40 transition"></div>
+                    <img src="https://images.unsplash.com/photo-1543208105-8605c5377751?auto=format&fit=crop&q=80&w=800" 
+                         alt="Castanhas Selecionadas" 
+                         class="relative rounded-2xl shadow-md w-full h-80 object-cover">
                 </div>
-                <a href="#comprar" class="block w-full text-center bg-brand-verde text-white py-3.5 rounded-xl font-bold hover:bg-brand-verdeHover transition shadow-lg shadow-brand-verde/20">
-                    Garantir Meu Pacote
-                </a>
-            </div>
-        </section>
-
-        <section id="comprar" class="max-w-xl mx-auto p-6 my-10">
-            <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-amber-900/10">
                 
-                <div id="area-formulario">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-2 text-center">Finalizar Pedido</h2>
-                    <p class="text-xs text-gray-500 text-center mb-6">Preencha os dados abaixo para calcular seu pedido.</p>
+                <div class="space-y-4">
+                    <span class="inline-block bg-brand-verde/10 text-brand-verde text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        🌿 100% Natural & Artesanal
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
+                        Castanha Premium Selecionada (500g)
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                        Selecionadas à mão, torradas no ponto certo e embaladas com vedação especial para manter a crocância incomparável e o sabor natural.
+                    </p>
+                    <div class="flex items-baseline gap-2 pt-2">
+                        <span class="text-3xl font-extrabold text-brand-castanha">R$ <span id="preco-unitario">50,00</span></span>
+                        <span class="text-xs text-gray-500 uppercase font-semibold">/ Embalagem 500g</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="comprar" class="max-w-xl mx-auto p-6 my-6">
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-amber-900/10">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2 text-center">Passo 1: Seus Dados e Pedido</h2>
+                    <p class="text-xs text-gray-500 text-center mb-6">Preencha os dados abaixo para prosseguir ao pagamento.</p>
                     
-                    <form id="form-pedido" class="space-y-4" onsubmit="processarPedido(event)">
+                    <form id="form-pedido" class="space-y-4" onsubmit="irParaPagina2(event)">
                         
                         <div>
                             <label for="qtd" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
@@ -87,158 +84,4 @@
 
                         <div class="bg-brand-fundo p-4 rounded-xl flex justify-between items-center border border-brand-castanha/20">
                             <div>
-                                <span class="text-xs text-gray-500 uppercase font-semibold block">Total a Pagar</span>
-                                <span class="text-2xl font-extrabold text-brand-castanha">R$ <span id="valor-total">50,00</span></span>
-                            </div>
-                            <span class="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded font-medium">Compra Segura</span>
-                        </div>
-
-                        <div class="space-y-3 pt-2">
-                            <h3 class="font-bold text-sm text-gray-800">Dados de Entrega</h3>
-                            <input type="text" id="nome" placeholder="Seu Nome Completo" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-brand-verde outline-none" required>
-                            <input type="tel" id="telefone" placeholder="Seu WhatsApp (ex: 98 99238-8693)" oninput="mascaraTelefone(this)" maxlength="15" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-brand-verde outline-none" required>
-                            <textarea id="endereco" rows="2" placeholder="Endereço completo (Rua, Número, Bairro, Cidade)" class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-brand-verde outline-none" required></textarea>
-                        </div>
-
-                        <div class="space-y-2 pt-2">
-                            <h3 class="font-bold text-sm text-gray-800">Forma de Pagamento</h3>
-                            <div class="grid grid-cols-2 gap-3">
-                                <label class="border rounded-lg p-3 flex items-center gap-2 cursor-pointer hover:bg-gray-50 transition border-gray-200">
-                                    <input type="radio" name="pagamento" value="PIX" checked onclick="alternarCamposPagamento('PIX')" class="accent-brand-verde">
-                                    <span class="text-sm font-semibold text-gray-700">PIX</span>
-                                </label>
-                                <label class="border rounded-lg p-3 flex items-center gap-2 cursor-pointer hover:bg-gray-50 transition border-gray-200">
-                                    <input type="radio" name="pagamento" value="Cartão de Crédito" onclick="alternarCamposPagamento('CARTAO')" class="accent-brand-verde">
-                                    <span class="text-sm font-semibold text-gray-700">Cartão de Crédito</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div id="campos-cartao" class="hidden space-y-3 bg-gray-50 p-4 rounded-xl border border-gray-200">
-                            <p class="text-xs text-gray-500 font-semibold mb-2">Bandeiras aceitas: Visa, Mastercard, Elo, Amex, Hipercard</p>
-                            <input type="text" id="card-number" placeholder="Número do Cartão" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm bg-white">
-                            <div class="grid grid-cols-2 gap-2">
-                                <input type="text" id="card-expiry" placeholder="MM/AA" class="border border-gray-300 rounded-lg p-2.5 text-sm bg-white">
-                                <input type="text" id="card-cvc" placeholder="CVC" class="border border-gray-300 rounded-lg p-2.5 text-sm bg-white">
-                            </div>
-                        </div>
-
-                        <button type="submit" class="w-full bg-brand-verde text-white py-4 rounded-xl font-bold text-base hover:bg-brand-verdeHover transition shadow-lg shadow-brand-verde/20 mt-4">
-                            Finalizar Pedido
-                        </button>
-                    </form>
-                </div>
-
-                <div id="confirmacao" class="hidden text-center space-y-4 py-4">
-                    <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">✓</div>
-                    <h3 class="text-2xl font-bold text-gray-900">Pedido Registrado!</h3>
-                    
-                    <div id="bloco-pix-pagamento" class="bg-amber-50/50 border border-amber-200 p-5 rounded-2xl space-y-3">
-                        <p class="text-xs font-bold text-amber-900 uppercase tracking-wider">Escaneie o QR Code ou use o PIX Copia e Cola:</p>
-                        <div class="flex justify-center my-2">
-                            <img id="qr-code-pix" src="" alt="QR Code PIX" class="w-48 h-48 border-2 border-white shadow-md rounded-xl">
-                        </div>
-                        <div class="space-y-2">
-                            <input type="text" readonly id="pix-copia-cola" value="07236339326" class="w-full text-center font-mono text-xs p-2 bg-white border rounded text-gray-600">
-                            <button onclick="copiarPix()" class="w-full bg-brand-verde text-white py-2 rounded-lg text-xs font-bold hover:bg-brand-verdeHover transition">
-                                Copiar Chave PIX (CPF)
-                            </button>
-                        </div>
-                    </div>
-
-                    <p class="text-xs text-gray-500 leading-relaxed">
-                        Envie o comprovante pelo WhatsApp para agilizar a confirmação e o envio!
-                    </p>
-
-                    <div class="bg-gray-50 p-4 rounded-xl text-left border text-xs space-y-1 text-gray-600 my-4">
-                        <p><strong>Cliente:</strong> <span id="resumo-nome"></span></p>
-                        <p><strong>Pedido:</strong> <span id="resumo-qtd"></span> pacote(s) (500g)</p>
-                        <p><strong>Total:</strong> R$ <span id="resumo-total"></span></p>
-                        <p><strong>Pagamento:</strong> <span id="resumo-pagamento"></span></p>
-                    </div>
-
-                    <a id="btn-whats" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 bg-green-600 text-white px-6 py-4 rounded-xl font-bold text-base hover:bg-green-700 transition w-full shadow-lg shadow-green-600/20">
-                        <span>💬</span> Enviar Comprovante no WhatsApp
-                    </a>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <footer class="text-center py-6 text-gray-400 text-xs border-t bg-white mt-12">
-        <p>© Castanhas da Dani. Todos os direitos reservados.</p>
-    </footer>
-
-    <script>
-        const PRECO_UNITARIO = 50.00;
-        const NUMERO_WHATSAPP = "5598992388693";
-        const CHAVE_PIX_CPF = "07236339326";
-
-        function formatarMoeda(v) { return v.toFixed(2).replace('.', ','); }
-
-        function alterarQtd(d) {
-            let input = document.getElementById('qtd');
-            let val = (parseInt(input.value) || 1) + d;
-            if (val >= 1 && val <= 50) input.value = val;
-            calcularTotal();
-        }
-
-        function calcularTotal() {
-            let qtd = parseInt(document.getElementById('qtd').value) || 1;
-            document.getElementById('valor-total').innerText = formatarMoeda(qtd * PRECO_UNITARIO);
-        }
-
-        function mascaraTelefone(i) {
-            let v = i.value.replace(/\D/g, "");
-            v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
-            v = v.replace(/(\d)(\d{4})$/, "$1-$2");
-            i.value = v;
-        }
-
-        function alternarCamposPagamento(tipo) {
-            document.getElementById('campos-cartao').classList.toggle('hidden', tipo !== 'CARTAO');
-        }
-
-        function copiarPix() {
-            let input = document.getElementById('pix-copia-cola');
-            navigator.clipboard.writeText(input.value);
-            alert("Chave PIX copiada com sucesso!");
-        }
-
-        function processarPedido(e) {
-            e.preventDefault();
-
-            const qtd = document.getElementById('qtd').value;
-            const nome = document.getElementById('nome').value.trim();
-            const telefone = document.getElementById('telefone').value.trim();
-            const endereco = document.getElementById('endereco').value.trim();
-            const pagamento = document.querySelector('input[name="pagamento"]:checked').value;
-            const total = formatarMoeda(parseInt(qtd) * PRECO_UNITARIO);
-
-            document.getElementById('resumo-nome').innerText = nome;
-            document.getElementById('resumo-qtd').innerText = qtd;
-            document.getElementById('resumo-total').innerText = total;
-            document.getElementById('resumo-pagamento').innerText = pagamento;
-
-            // QR Code do PIX
-            const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(CHAVE_PIX_CPF)}`;
-            document.getElementById('qr-code-pix').src = qrUrl;
-
-            document.getElementById('area-formulario').classList.add('hidden');
-            document.getElementById('confirmacao').classList.remove('hidden');
-
-            const mensagem = `Olá! Acabei de realizar um pedido pelo site e estou enviando o comprovante do pagamento.\n\n` +
-                `📌 *Resumo do Pedido:*\n` +
-                `• *Cliente:* ${nome}\n` +
-                `• *Quantidade:* ${qtd} pacote(s) (500g)\n` +
-                `• *Total:* R$ ${total}\n` +
-                `• *Pagamento:* ${pagamento}\n` +
-                `• *Endereço:* ${endereco}`;
-
-            document.getElementById('btn-whats').href = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
-        }
-    </script>
-</body>
-</html>
-        
+                                <span class="text-xs
