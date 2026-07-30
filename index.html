@@ -3,17 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Castanhas da Dani | Seleção Premium</title>
+    
+    <title>Castanhas da Dani | Castanha de Caju Premium em São Luís - MA</title>
+    <meta name="description" content="Compre Castanha de Caju Premium selecionada em São Luís - MA. Produto fresco, crocante e 100% natural com entrega rápida e pagamento via PIX.">
+    <meta name="keywords" content="castanha de caju, sao luis, ma, castanhas da dani, saudavel, premium, caju">
+    <meta name="author" content="Castanhas da Dani">
+    
+    <meta property="og:title" content="Castanhas da Dani | Seleção Premium">
+    <meta property="og:description" content="Castanha de caju crocante e fresca com entrega em São Luís - MA. Peça a sua online!">
+    <meta property="og:image" content="qrcode.jpeg">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="qrcode.jpeg" type="image/jpeg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
                     colors: {
                         brand: {
-                            verde: '#4A5D3E',
-                            verdeHover: '#3B4B31',
-                            castanha: '#8B5A2B',
+                            verde: '#2D5A27',
+                            verdeHover: '#1E3E1A',
+                            castanha: '#8B4513',
+                            dourado: '#D4AF37',
                             fundo: '#FAF8F5',
                             card: '#FFFFFF'
                         }
@@ -22,66 +42,443 @@
             }
         }
     </script>
-</head>
-<body class="bg-brand-fundo text-gray-800 font-sans antialiased min-h-screen flex flex-col justify-between">
 
-    <header class="bg-white/90 backdrop-blur-md shadow-sm py-4 px-6 sticky top-0 z-50 border-b border-amber-900/10">
-        <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <span class="text-2xl">🌰</span>
-                <h1 class="text-xl font-bold text-brand-castanha tracking-tight">Castanhas da Dani</h1>
+    <style>
+        .custom-shadow {
+            box-shadow: 0 10px 30px -5px rgba(139, 69, 19, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-brand-fundo text-gray-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-verde selection:text-white">
+
+    <div id="barra-progresso-container" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="max-w-4xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between text-xs md:text-sm font-bold text-gray-400">
+                <div id="step-1-indicator" class="flex items-center gap-2 text-brand-verde">
+                    <span class="w-6 h-6 rounded-full bg-brand-verde text-white flex items-center justify-center text-xs">1</span>
+                    <span>Produto</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-200 mx-2 md:mx-4 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="h-full bg-brand-verde w-1/2 transition-all duration-500"></div>
+                </div>
+                <div id="step-2-indicator" class="flex items-center gap-2">
+                    <span id="step-2-badge" class="w-6 h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-xs">2</span>
+                    <span>Pagamento & Entrega</span>
+                </div>
             </div>
-            <button onclick="irParaPagina1()" class="bg-brand-verde text-white px-5 py-2 rounded-full font-semibold hover:bg-brand-verdeHover transition-all text-sm shadow-sm">
-                Fazer Pedido
-            </button>
+        </div>
+    </div>
+
+    <header class="bg-white border-b border-gray-100">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-brand-verde/10 flex items-center justify-center text-2xl group-hover:scale-105 transition-transform">
+                    🌰
+                </div>
+                <div>
+                    <h1 class="text-xl font-extrabold text-brand-castanha tracking-tight">Castanhas da Dani</h1>
+                    <p class="text-[10px] text-gray-400 uppercase font-semibold tracking-wider">São Luís – MA</p>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-600">
+                <a href="#como-comprar" class="hover:text-brand-verde transition-colors">Como Comprar</a>
+                <a href="#nutricional" class="hover:text-brand-verde transition-colors">Tabela Nutricional</a>
+                <a href="#faq" class="hover:text-brand-verde transition-colors">Dúvidas</a>
+            </nav>
         </div>
     </header>
 
-    <div id="pagina-1" class="block">
-        <main>
-            <section class="max-w-4xl mx-auto p-6 md:py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-castanha to-brand-verde rounded-3xl blur opacity-25 group-hover:opacity-40 transition"></div>
+    <div id="etapa-1" class="block">
+        <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
+            
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white p-6 md:p-8 rounded-3xl custom-shadow border border-amber-900/5">
+                <div class="relative group overflow-hidden rounded-2xl">
                     <img src="https://images.unsplash.com/photo-1543208105-8605c5377751?auto=format&fit=crop&q=80&w=800" 
-                         alt="Castanhas Selecionadas" 
-                         class="relative rounded-2xl shadow-md w-full h-80 object-cover">
-                </div>
-                
-                <div class="space-y-4">
-                    <span class="inline-block bg-brand-verde/10 text-brand-verde text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                        🌿 100% Natural & Artesanal
+                         alt="Castanha de Caju Premium Selecionada" 
+                         loading="lazy"
+                         class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute top-3 left-3 bg-brand-verde text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
+                        ✨ Qualidade Premium
                     </span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
-                        Castanha Premium Selecionada (500g)
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="text-3xl font-extrabold text-gray-900 leading-tight">
+                        Castanha de Caju Torrada (500g)
                     </h2>
-                    <p class="text-gray-600 leading-relaxed text-sm md:text-base">
-                        Selecionadas à mão, torradas no ponto certo e embaladas com vedação especial para manter a crocância incomparável e o sabor natural.
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Castanhas selecionadas manualmente, torradas no ponto ideal, mantendo sabor rico e crocância incomparável. 100% naturais, sem aditivos químicos ou excesso de sódio.
                     </p>
-                    <div class="flex items-baseline gap-2 pt-2">
-                        <span class="text-3xl font-extrabold text-brand-castanha">R$ <span id="preco-unitario">50,00</span></span>
-                        <span class="text-xs text-gray-500 uppercase font-semibold">/ Embalagem 500g</span>
+                    
+                    <div class="bg-amber-50/60 p-4 rounded-xl border border-amber-100 flex justify-between items-center">
+                        <div>
+                            <span class="text-xs text-gray-500 block font-semibold uppercase">Preço Promocional</span>
+                            <span class="text-2xl font-extrabold text-brand-castanha">R$ 50,00 <span class="text-xs font-normal text-gray-500">/ 500g</span></span>
+                        </div>
+                        <span class="text-xs bg-brand-verde/10 text-brand-verde font-bold px-2.5 py-1 rounded-lg">
+                            R$ 100,00 / kg
+                        </span>
                     </div>
                 </div>
             </section>
 
-            <section id="comprar" class="max-w-xl mx-auto p-6 my-6">
-                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-amber-900/10">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-2 text-center">Passo 1: Seus Dados e Pedido</h2>
-                    <p class="text-xs text-gray-500 text-center mb-6">Preencha os dados abaixo para prosseguir ao pagamento.</p>
-                    
-                    <form id="form-pedido" class="space-y-4" onsubmit="irParaPagina2(event)">
-                        
-                        <div>
-                            <label for="qtd" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
-                                Quantidade (Pacotes de 500g)
-                            </label>
-                            <div class="flex items-center gap-3">
-                                <button type="button" onclick="alterarQtd(-1)" class="w-10 h-10 rounded-lg bg-gray-100 font-bold text-gray-700 hover:bg-gray-200 transition">-</button>
-                                <input type="number" id="qtd" min="1" max="50" value="1" oninput="calcularTotal()" class="w-full text-center border border-gray-300 rounded-lg p-2.5 font-bold text-lg focus:ring-2 focus:ring-brand-verde outline-none" required>
-                                <button type="button" onclick="alterarQtd(1)" class="w-10 h-10 rounded-lg bg-gray-100 font-bold text-gray-700 hover:bg-gray-200 transition">+</button>
-                            </div>
-                        </div>
+            <section id="como-comprar" class="space-y-6">
+                <div class="text-center space-y-1">
+                    <h3 class="text-2xl font-bold text-gray-900">Como Comprar</h3>
+                    <p class="text-xs text-gray-500">Simples, rápido e direto pelo WhatsApp</p>
+                </div>
 
-                        <div class="bg-brand-fundo p-4 rounded-xl flex justify-between items-center border border-brand-castanha/20">
-                            <div>
-                                <span class="text-xs
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-5 rounded-2xl border border-gray-100 text-center space-y-2 custom-shadow">
+                        <div class="w-10 h-10 bg-brand-fundo rounded-full flex items-center justify-center text-xl mx-auto">1️⃣</div>
+                        <h4 class="font-bold text-sm text-gray-800">Escolha a Qtd</h4>
+                        <p class="text-xs text-gray-500">Selecione quantos pacotes precisa.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-gray-100 text-center space-y-2 custom-shadow">
+                        <div class="w-10 h-10 bg-brand-fundo rounded-full flex items-center justify-center text-xl mx-auto">2️⃣</div>
+                        <h4 class="font-bold text-sm text-gray-800">Seus Dados</h4>
+                        <p class="text-xs text-gray-500">Informe seu nome e WhatsApp.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-gray-100 text-center space-y-2 custom-shadow">
+                        <div class="w-10 h-10 bg-brand-fundo rounded-full flex items-center justify-center text-xl mx-auto">3️⃣</div>
+                        <h4 class="font-bold text-sm text-gray-800">Escolha Entrega</h4>
+                        <p class="text-xs text-gray-500">Retirada ou Uber Entrega.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-gray-100 text-center space-y-2 custom-shadow">
+                        <div class="w-10 h-10 bg-brand-fundo rounded-full flex items-center justify-center text-xl mx-auto">4️⃣</div>
+                        <h4 class="font-bold text-sm text-gray-800">Pague no PIX</h4>
+                        <p class="text-xs text-gray-500">Envie o comprovante no WhatsApp.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="checkout" class="bg-white p-6 md:p-8 rounded-3xl custom-shadow border border-amber-900/10">
+                <form id="form-pedido" onsubmit="avancarParaEtapa2(event)" class="space-y-6">
+                    <div class="border-b pb-4">
+                        <h3 class="text-xl font-bold text-gray-900">Configure seu Pedido</h3>
+                        <p class="text-xs text-gray-500">Preencha as informações para calcular o total exato.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="qtd" class="block text-xs font-bold uppercase tracking-wider text-gray-700">
+                            Quantidade de Pacotes (500g cada)
+                        </label>
+                        <div class="flex items-center gap-3">
+                            <button type="button" onclick="alterarQtd(-1)" class="w-12 h-12 rounded-xl bg-gray-100 font-extrabold text-xl text-gray-700 hover:bg-gray-200 transition">-</button>
+                            <input type="number" id="qtd" min="1" max="50" value="1" oninput="atualizarResumoCalculado()" class="w-full text-center border-2 border-gray-200 rounded-xl p-3 font-bold text-xl focus:border-brand-verde outline-none" required>
+                            <button type="button" onclick="alterarQtd(1)" class="w-12 h-12 rounded-xl bg-gray-100 font-extrabold text-xl text-gray-700 hover:bg-gray-200 transition">+</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-fundo p-4 rounded-2xl border border-brand-castanha/10 grid grid-cols-2 gap-4 text-center">
+                        <div>
+                            <span class="text-xs text-gray-500 font-semibold block">Peso Total</span>
+                            <span id="resumo-peso" class="text-lg font-bold text-gray-800">500g</span>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-500 font-semibold block">Valor Total</span>
+                            <span id="resumo-valor-total" class="text-xl font-extrabold text-brand-castanha">R$ 50,00</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-sm text-gray-800">Seus Dados de Contato</h4>
+                        <div>
+                            <label for="nome" class="block text-xs text-gray-600 mb-1">Nome Completo *</label>
+                            <input type="text" id="nome" placeholder="Digite seu nome" class="w-full border border-gray-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-verde outline-none" required>
+                        </div>
+                        <div>
+                            <label for="telefone" class="block text-xs text-gray-600 mb-1">WhatsApp *</label>
+                            <input type="tel" id="telefone" placeholder="(98) 99238-8693" oninput="mascaraTelefone(this)" maxlength="15" class="w-full border border-gray-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-verde outline-none" required>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <h4 class="font-bold text-sm text-gray-800">Opção de Entrega</h4>
+                            <span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">Exclusivo São Luís - MA</span>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <label class="border-2 rounded-xl p-4 flex items-start gap-3 cursor-pointer hover:border-brand-verde transition border-gray-200">
+                                <input type="radio" name="entrega" value="Retirada combinada com Márcinha" checked class="mt-1 accent-brand-verde">
+                                <div>
+                                    <span class="text-sm font-bold block text-gray-800">Retirada no Local</span>
+                                    <span class="text-xs text-gray-500 block">Combinar local/horário de retirada diretamente com a Márcinha.</span>
+                                </div>
+                            </label>
+
+                            <label class="border-2 rounded-xl p-4 flex items-start gap-3 cursor-pointer hover:border-brand-verde transition border-gray-200">
+                                <input type="radio" name="entrega" value="Uber Entrega (Pago pelo Cliente)" class="mt-1 accent-brand-verde">
+                                <div>
+                                    <span class="text-sm font-bold block text-gray-800">Uber Entrega</span>
+                                    <span class="text-xs text-gray-500 block">Solicitado e pago à parte pelo próprio cliente.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-sm text-gray-800">Forma de Pagamento</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="border-2 rounded-xl p-3 flex items-center gap-2 cursor-pointer border-brand-verde bg-brand-verde/5">
+                                <input type="radio" name="pagamento" value="PIX" checked class="accent-brand-verde">
+                                <span class="text-sm font-bold text-gray-800">PIX (Aprovação Instantânea)</span>
+                            </label>
+                            <label class="border-2 rounded-xl p-3 flex items-center gap-2 cursor-pointer border-gray-200 opacity-60">
+                                <input type="radio" name="pagamento" value="Cartão de Crédito" disabled class="accent-brand-verde">
+                                <span class="text-sm font-bold text-gray-500">Cartão (Indisponível)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="observacoes" class="block text-xs font-semibold text-gray-700 mb-1">Observações do Pedido (Opcional)</label>
+                        <textarea id="observacoes" rows="2" placeholder="Ex: Retirar pela manhã, entrar em contato antes da entrega..." class="w-full border border-gray-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-verde outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-verde text-white py-4 rounded-xl font-bold text-base hover:bg-brand-verdeHover transition shadow-lg shadow-brand-verde/20">
+                        Ir para Tela de Pagamento →
+                    </button>
+                </form>
+            </section>
+
+            <section id="nutricional" class="bg-white p-6 rounded-3xl custom-shadow border border-gray-100 space-y-4">
+                <h3 class="text-xl font-bold text-gray-900">Informações Nutricionais Média (Porção de 15g / 1 colher de sopa)</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs text-gray-600 border-collapse">
+                        <thead>
+                            <tr class="border-b bg-brand-fundo">
+                                <th class="p-2.5 font-bold">Item</th>
+                                <th class="p-2.5 font-bold">Quantidade por porção</th>
+                                <th class="p-2.5 font-bold">% VD (*)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr><td class="p-2.5">Valor Energético</td><td class="p-2.5">87 kcal</td><td class="p-2.5">4%</td></tr>
+                            <tr><td class="p-2.5">Carboidratos</td><td class="p-2.5">4,5g</td><td class="p-2.5">2%</td></tr>
+                            <tr><td class="p-2.5">Proteínas</td><td class="p-2.5">2,7g</td><td class="p-2.5">4%</td></tr>
+                            <tr><td class="p-2.5">Gorduras Totais</td><td class="p-2.5">6,6g</td><td class="p-2.5">12%</td></tr>
+                            <tr><td class="p-2.5">Sódio</td><td class="p-2.5">2mg</td><td class="p-2.5">0%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="faq" class="bg-white p-6 rounded-3xl custom-shadow border border-gray-100 space-y-4">
+                <h3 class="text-xl font-bold text-gray-900">Perguntas Frequentes (FAQ)</h3>
+                <div class="space-y-3 text-sm">
+                    <details class="group border-b pb-2 cursor-pointer">
+                        <summary class="font-semibold text-gray-800 flex justify-between items-center">
+                            Como funciona a retirada combinada com a Márcinha?
+                            <span class="group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <p class="text-xs text-gray-500 mt-2">Após a confirmação do pagamento, você entrará em contato via WhatsApp para combinar o ponto de encontro e horário de entrega diretamente em São Luís.</p>
+                    </details>
+                    <details class="group border-b pb-2 cursor-pointer">
+                        <summary class="font-semibold text-gray-800 flex justify-between items-center">
+                            Como funciona o Uber Entrega?
+                            <span class="group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <p class="text-xs text-gray-500 mt-2">Você solicita o serviço no aplicativo Uber para a retirada das castanhas e arca com o valor da corrida direto no app.</p>
+                    </details>
+                    <details class="group border-b pb-2 cursor-pointer">
+                        <summary class="font-semibold text-gray-800 flex justify-between items-center">
+                            Existe quantidade mínima para compra?
+                            <span class="group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <p class="text-xs text-gray-500 mt-2">A quantidade mínima é de apenas 1 pacote (500g) no valor de R$ 50,00.</p>
+                    </details>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="etapa-2" class="hidden max-w-2xl mx-auto px-4 py-8">
+        <section class="bg-white p-6 md:p-8 rounded-3xl custom-shadow border border-amber-900/10 text-center space-y-6">
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+                ✓
+            </div>
+            
+            <div class="space-y-1">
+                <h2 class="text-2xl font-extrabold text-gray-900">Efetue o Pagamento via PIX</h2>
+                <p class="text-xs text-gray-500">Escaneie o QR Code abaixo com o app do seu banco ou copie a chave.</p>
+            </div>
+
+            <div class="bg-amber-50/50 border border-amber-200 p-6 rounded-2xl space-y-4">
+                <div class="flex justify-center">
+                    <img id="qr-code-pix" src="qrcode.jpeg" alt="QR Code PIX Nubank" class="w-56 h-56 border-2 border-white shadow-md rounded-2xl object-contain bg-white p-2">
+                </div>
+
+                <div class="bg-white p-3 rounded-xl border flex items-center justify-between text-xs">
+                    <span class="font-mono text-gray-700 font-bold" id="chave-pix-texto">07236339326</span>
+                    <button onclick="copiarPix()" class="bg-brand-verde text-white px-3 py-1.5 rounded-lg font-bold hover:bg-brand-verdeHover transition">
+                        Copiar Chave
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-5 rounded-2xl text-left border text-xs space-y-2 text-gray-700">
+                <p class="border-b pb-1"><strong>Número do Pedido:</strong> <span id="resumo-pedido-num" class="font-mono font-bold text-brand-castanha"></span></p>
+                <p><strong>Data/Hora:</strong> <span id="resumo-data-hora"></span></p>
+                <p><strong>Cliente:</strong> <span id="resumo-nome"></span> (<span id="resumo-telefone"></span>)</p>
+                <p><strong>Pedido:</strong> <span id="resumo-qtd"></span> pacote(s) (<span id="resumo-peso-final"></span>)</p>
+                <p><strong>Total:</strong> <span id="resumo-total" class="font-bold text-brand-castanha"></span></p>
+                <p><strong>Forma de Entrega:</strong> <span id="resumo-entrega"></span></p>
+                <p id="resumo-obs-wrapper" class="hidden"><strong>Obs:</strong> <span id="resumo-obs"></span></p>
+            </div>
+
+            <a id="btn-whats-comprovante" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 bg-green-600 text-white px-6 py-4 rounded-xl font-bold text-base hover:bg-green-700 transition w-full shadow-lg shadow-green-600/20">
+                <span>💬</span> Enviar Comprovante pelo WhatsApp
+            </a>
+
+            <button onclick="voltarParaEtapa1()" class="w-full text-center text-xs font-bold text-gray-500 hover:text-brand-castanha py-2 transition underline">
+                ← Voltar para alterar quantidade, dados ou entrega
+            </button>
+        </section>
+    </div>
+
+    <a href="https://wa.me/5598992388693?text=Ol%C3%A1!%20Gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Castanha%20de%20Caju." 
+       target="_blank" 
+       aria-label="Falar pelo WhatsApp"
+       class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 hover:scale-110 transition-all z-50">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+        </svg>
+    </a>
+
+    <footer class="bg-white border-t border-gray-100 py-6 text-center text-xs text-gray-400 space-y-1 mt-12">
+        <p>© Castanhas da Dani. Todos os direitos reservados.</p>
+        <p>São Luís – Maranhão</p>
+    </footer>
+
+    <script>
+        const VALOR_POR_KG = 100.00;
+        const GRAMAS_POR_PACOTE = 500;
+        const VALOR_PACOTE = 50.00;
+        const NUMERO_WHATSAPP = "5598992388693";
+        const CHAVE_PIX = "07236339326";
+
+        function formatarMoeda(valor) {
+            return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function alterarQtd(delta) {
+            const inputQtd = document.getElementById('qtd');
+            let novaQtd = (parseInt(inputQtd.value) || 1) + delta;
+            if (novaQtd < 1) novaQtd = 1;
+            if (novaQtd > 50) novaQtd = 50;
+            inputQtd.value = novaQtd;
+            atualizarResumoCalculado();
+        }
+
+        function atualizarResumoCalculado() {
+            const inputQtd = document.getElementById('qtd');
+            let qtd = parseInt(inputQtd.value);
+            if (isNaN(qtd) || qtd < 1) qtd = 1;
+
+            const totalGramas = qtd * GRAMAS_POR_PACOTE;
+            const totalValor = qtd * VALOR_PACOTE;
+
+            const textoPeso = totalGramas >= 1000 ? `${(totalGramas/1000).toFixed(1)}kg` : `${totalGramas}g`;
+
+            document.getElementById('resumo-peso').innerText = textoPeso;
+            document.getElementById('resumo-valor-total').innerText = formatarMoeda(totalValor);
+        }
+
+        function mascaraTelefone(input) {
+            let v = input.value.replace(/\D/g, "");
+            v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
+            v = v.replace(/(\d)(\d{4})$/, "$1-$2");
+            input.value = v;
+        }
+
+        function copiarPix() {
+            navigator.clipboard.writeText(CHAVE_PIX);
+            alert("Chave PIX copiada para a área de transferência!");
+        }
+
+        function gerarNumeroPedido() {
+            return 'CD' + Math.floor(100000 + Math.random() * 900000);
+        }
+
+        function avancarParaEtapa2(e) {
+            e.preventDefault();
+
+            const qtd = document.getElementById('qtd').value;
+            const nome = document.getElementById('nome').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+            const entrega = document.querySelector('input[name="entrega"]:checked').value;
+            const observacoes = document.getElementById('observacoes').value.trim();
+
+            if (!nome || !telefone) {
+                alert("Por favor, preencha seu nome e telefone de contato.");
+                return;
+            }
+
+            const totalGramas = qtd * GRAMAS_POR_PACOTE;
+            const textoPeso = totalGramas >= 1000 ? `${(totalGramas/1000).toFixed(1)}kg` : `${totalGramas}g`;
+            const totalValor = formatarMoeda(qtd * VALOR_PACOTE);
+            const agora = new Date();
+            const dataHora = agora.toLocaleDateString('pt-BR') + ' às ' + agora.toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'});
+            const numPedido = gerarNumeroPedido();
+
+            // Preenche o resumo da etapa 2
+            document.getElementById('resumo-pedido-num').innerText = numPedido;
+            document.getElementById('resumo-data-hora').innerText = dataHora;
+            document.getElementById('resumo-nome').innerText = nome;
+            document.getElementById('resumo-telefone').innerText = telefone;
+            document.getElementById('resumo-qtd').innerText = qtd;
+            document.getElementById('resumo-peso-final').innerText = textoPeso;
+            document.getElementById('resumo-total').innerText = totalValor;
+            document.getElementById('resumo-entrega').innerText = entrega;
+
+            if (observacoes) {
+                document.getElementById('resumo-obs').innerText = observacoes;
+                document.getElementById('resumo-obs-wrapper').classList.remove('hidden');
+            } else {
+                document.getElementById('resumo-obs-wrapper').classList.add('hidden');
+            }
+
+            // Link WhatsApp
+            const mensagem = `Olá! Fiz o pedido *#${numPedido}* e estou enviando o comprovante de pagamento.\n\n` +
+                `📌 *Detalhes do Pedido:*\n` +
+                `• *Cliente:* ${nome}\n` +
+                `• *Telefone:* ${telefone}\n` +
+                `• *Quantidade:* ${qtd} pacote(s) (${textoPeso})\n` +
+                `• *Total:* ${totalValor}\n` +
+                `• *Entrega:* ${entrega}\n` +
+                (observacoes ? `• *Obs:* ${observacoes}\n` : '') +
+                `• *Data:* ${dataHora}`;
+
+            document.getElementById('btn-whats-comprovante').href = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
+
+            // Alterna Etapas e Atualiza Barra de Progresso
+            document.getElementById('etapa-1').classList.add('hidden');
+            document.getElementById('etapa-2').classList.remove('hidden');
+
+            document.getElementById('progress-bar').classList.remove('w-1/2');
+            document.getElementById('progress-bar').classList.add('w-full');
+            document.getElementById('step-2-indicator').classList.add('text-brand-verde');
+            document.getElementById('step-2-badge').classList.remove('bg-gray-200', 'text-gray-600');
+            document.getElementById('step-2-badge').classList.add('bg-brand-verde', 'text-white');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function voltarParaEtapa1() {
+            document.getElementById('etapa-2').classList.add('hidden');
+            document.getElementById('etapa-1').classList.remove('hidden');
+
+            document.getElementById('progress-bar').classList.remove('w-full');
+            document.getElementById('progress-bar').classList.add('w-1/2');
+            document.getElementById('step-2-indicator').classList.remove('text-brand-verde');
+            document.getElementById('step-2-badge').classList.add('bg-gray-200', 'text-gray-600');
+            document.getElementById('step-2-badge').classList.remove('bg-brand-verde', 'text-white');
+
+            document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
