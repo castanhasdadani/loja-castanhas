@@ -3,1360 +3,958 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Castanhas de Caju Premium | Selecionadas & Crocantes em São Luís - MA</title>
-    <meta name="description" content="As melhores castanhas de caju artesanais de São Luís - MA. Seleção premium, máxima crocância e entrega rápida via Uber Entrega ou Retirada.">
-    <meta name="keywords" content="castanha de caju, sao luis, maranhao, castanha artesanal, castanha premium">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:title" content="Castanhas de Caju Premium - São Luís MA">
-    <meta property="og:description" content="Peça online castanhas frescas e crocantes com entrega local exclusiva em São Luís.">
+    <title>Castanha de Caju Premium | São Luís - MA</title>
+    <meta name="description" content="Compre Castanha de Caju Premium em São Luís - MA. Seleção artesanal, crocância e sabor inigualável com entrega rápida via Uber ou retirada.">
+    <meta name="keywords" content="Castanha de Caju, São Luís, Maranhão, Castanha Premium, Comprar Castanha">
+    
+    <meta property="og:title" content="Castanha de Caju Premium | São Luís - MA">
+    <meta property="og:description" content="As melhores Castanhas de Caju de São Luís. Peça online e receba com rapidez.">
     <meta property="og:image" content="assets/imagens/castanha.jpg">
     <meta property="og:type" content="website">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "Castanha de Caju Premium",
-      "image": ["assets/imagens/castanha.jpg"],
-      "description": "Castanha de caju artesanal de altíssima qualidade, crocante e selecionada.",
-      "brand": { "@type": "Brand", "name": "Castanha de Caju Selecionada" },
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "BRL",
-        "price": "100.00",
-        "priceValidUntil": "2026-12-31",
-        "itemCondition": "https://schema.org/NewCondition",
-        "availability": "https://schema.org/InStock",
-        "areaServed": "São Luís - MA"
-      }
-    }
-    </script>
-
     <link rel="shortcut icon" href="assets/imagens/favicon.ico" type="image/x-icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2d5a27; /* Verde natural */
+            --primary-hover: #1e3f1a;
+            --accent: #d4a373; /* Bege Castanha */
+            --accent-light: #fefae0;
+            --dark: #1c1917; /* Marrom ultra escuro */
+            --bg-light: #faf8f5;
+            --card-bg: #ffffff;
+            --text-muted: #66605b;
+            --border: #e7e5e4;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--dark);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark);
+        }
+
+        /* Header Fixado */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        .logo-area img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        /* Barra de Progresso */
+        .step-progress {
+            background: var(--card-bg);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border);
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+
+        .progress-bar-fill {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 2px;
+            background: var(--primary);
+            z-index: 1;
+            transform: translateY(-50%);
+            transition: var(--transition);
+            width: 0%;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 2;
+            background: var(--card-bg);
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .step-item.active .step-number {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
+        }
+
+        .step-item.completed .step-number {
+            border-color: var(--primary);
+            background: var(--accent-light);
+            color: var(--primary);
+        }
+
+        .step-item.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Hero Carrossel (Apenas imagem castanha 1.png e imagem castanha 2.png) */
+        .hero-carousel {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2.5rem;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 200%;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .carousel-slide {
+            width: 50%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2.5rem;
+            color: white;
+        }
+
+        .carousel-overlay h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot.active {
+            background: white;
+            width: 24px;
+            border-radius: 10px;
+        }
+
+        /* Grid da Loja */
+        .store-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        @media (max-width: 868px) {
+            .store-grid { grid-template-columns: 1fr; }
+            .hero-carousel { height: 260px; }
+            .carousel-overlay h1 { font-size: 1.8rem; }
+        }
+
+        /* Cards & Formulários */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: 1.75rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 0.75rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 0.9rem 1.5rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
+        .btn-secondary { background: #e7e5e4; color: var(--dark); }
+        .btn-whatsapp { background: #25D366; color: white; }
+        .btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); }
+        .btn-group { display: flex; gap: 10px; margin-top: 1rem; }
+
+        /* Controles de Quantidade */
+        .qty-selector {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-light);
+            border-radius: var(--radius-sm);
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            margin: 1.5rem 0;
+        }
+
+        .btn-qty {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            background: white;
+            border: 1px solid var(--border);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .btn-qty:hover { background: var(--primary); color: white; }
+
+        .qty-display { text-align: center; }
+        .qty-amount { font-size: 1.5rem; font-weight: 700; color: var(--dark); }
+
+        .location-alert {
+            background: var(--accent-light);
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; margin-bottom: 0.4rem; font-weight: 500; font-size: 0.9rem; }
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            font-size: 1rem;
+            outline: none;
+        }
+        .form-control:focus { border-color: var(--primary); }
+
+        .delivery-options, .payment-options { display: flex; flex-direction: column; gap: 12px; }
+        .radio-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .radio-card.selected { border-color: var(--primary); background: rgba(45, 90, 39, 0.03); }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .summary-box { position: sticky; top: 90px; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.95rem; }
+        .summary-row.total {
+            border-top: 2px dashed var(--border);
+            padding-top: 0.75rem;
+            margin-top: 0.75rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        .qrcode-wrapper {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: var(--radius-md);
+            margin: 1rem 0;
+        }
+        .qrcode-wrapper img { max-width: 200px; border-radius: var(--radius-sm); margin-bottom: 1rem; }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .modal.active { display: flex; }
+        .modal-content {
+            background: white;
+            border-radius: var(--radius-md);
+            max-width: 400px;
+            width: 100%;
+            padding: 1.5rem;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            margin-top: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--dark);
+        }
+        .contact-btn:hover { border-color: #25D366; background: rgba(37, 211, 102, 0.05); }
+
+        .nutri-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 1rem; }
+        .nutri-table th, .nutri-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+        .nutri-table th { background: var(--bg-light); }
+
+        .faq-item { margin-bottom: 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+        .faq-question { padding: 1rem; background: var(--card-bg); font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
+        .faq-answer { padding: 0 1rem 1rem 1rem; display: none; color: var(--text-muted); }
+        .faq-item.active .faq-answer { display: block; }
+
+        .step-content { display: none; }
+        .step-content.active { display: block; }
+
+        footer { margin-top: 4rem; padding: 2.5rem 0; background: var(--dark); color: #a8a29e; text-align: center; }
+        .back-to-top {
+            position: fixed; bottom: 25px; left: 25px; width: 44px; height: 44px;
+            background: white; border: 1px solid var(--border); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; cursor: pointer;
+            opacity: 0; visibility: hidden; transition: var(--transition);
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+    </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo-link">
-                <img src="assets/imagens/logo.png" alt="Logo Castanhas de Caju" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span class="logo-fallback" style="display:none;">Castanha<span>Premium</span></span>
+    <header>
+        <div class="container nav-content">
+            <a href="#" class="logo-area" onclick="goToStep(1); return false;">
+                <img src="assets/imagens/logo.png" alt="Logo Castanha" onerror="this.style.display='none'">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+                <span class="logo-text">Castanha São Luís</span>
             </a>
-            <nav class="nav-menu">
-                <a href="#sobre">Diferenciais</a>
-                <a href="#nutricional">Tabela Nutricional</a>
-                <a href="#passos">Como Comprar</a>
-                <a href="#faq">Dúvidas</a>
-            </nav>
-            <div class="nav-actions">
-                <a href="produto.html" class="btn btn-primary">Comprar Agora</a>
+            <div style="font-size: 0.85rem; font-weight: 600; color: var(--primary); background: var(--accent-light); padding: 4px 12px; border-radius: 20px;">
+                📍 São Luís - MA
             </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-carousel">
-            <div class="slide active" style="background-image: url('assets/imagens/imagem castanha 1.png');">
-                <div class="hero-overlay"></div>
-                <div class="container hero-content">
-                    <span class="badge">Sabor & Tradição em São Luís</span>
-                    <h1>Castanha de Caju Artesanal, Crocante e Selecionada</h1>
-                    <p>Qualidade incomparável, torragem perfeita e grãos inteiros selecionados à mão. Entrega rápida e exclusiva para São Luís - MA.</p>
-                    <div class="hero-buttons">
-                        <a href="produto.html" class="btn btn-gold">Comprar Agora</a>
-                        <a href="https://wa.me/5598992388693?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20d%C3%BAvidas%20sobre%20as%20castanhas." target="_blank" rel="noopener" class="btn btn-whatsapp-hero">Falar no WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-            <div class="slide" style="background-image: url('assets/imagens/imagem castanha 2.png');">
-                <div class="hero-overlay"></div>
-                <div class="container hero-content">
-                    <span class="badge">100% Natural & Fresca</span>
-                    <h1>A Melhor Experiência de Nutrição e Sabor</h1>
-                    <p>Faça seu pedido diretamente pelo site com pagamento facilitado via Pix ou Cartão e escolha sua forma de entrega preferida.</p>
-                    <div class="hero-buttons">
-                        <a href="produto.html" class="btn btn-gold">Fazer Pedido</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-indicators">
-            <button class="indicator active" aria-label="Slide 1"></button>
-            <button class="indicator" aria-label="Slide 2"></button>
-        </div>
-    </section>
-
-    <section id="sobre" class="section">
+    <nav class="step-progress">
         <div class="container">
-            <div class="section-header">
-                <h2>Por que Escolher Nossas Castanhas?</h2>
-                <p>Cuidado artesanal do produto ao envio para garantir máxima experiência gastronômica.</p>
-            </div>
-            <div class="grid grid-3">
-                <div class="card feature-card">
-                    <div class="icon">✨</div>
-                    <h3>Frescor & Crocância</h3>
-                    <p>Embaladas no ponto ideal para manter o 'crunch' inconfundível até o momento de consumir.</p>
+            <div class="progress-steps">
+                <div class="progress-bar-fill" id="progressBarFill"></div>
+                <div class="step-item active" id="stepIndicator1">
+                    <div class="step-number">1</div>
+                    <span>Produto</span>
                 </div>
-                <div class="card feature-card">
-                    <div class="icon">🔍</div>
-                    <h3>Seleção Rigorosa</h3>
-                    <p>Apenas castanhas inteiras, grandes e com padrões elevados de qualidade e higiene.</p>
+                <div class="step-item" id="stepIndicator2">
+                    <div class="step-number">2</div>
+                    <span>Seus Dados</span>
                 </div>
-                <div class="card feature-card">
-                    <div class="icon">🌿</div>
-                    <h3>100% Natural</h3>
-                    <p>Sem conservantes artificiais ou aditivos. Alimento puro e rico em gorduras boas para sua saúde.</p>
+                <div class="step-item" id="stepIndicator3">
+                    <div class="step-number">3</div>
+                    <span>Pagamento</span>
+                </div>
+                <div class="step-item" id="stepIndicator4">
+                    <div class="step-number">4</div>
+                    <span>Confirmação</span>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <section id="nutricional" class="section bg-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>Informações Nutricionais</h2>
-                <p>Valores médios para porção de 50g (aproximadamente 1 punhado).</p>
-            </div>
-            <div class="table-responsive">
-                <table class="nutri-table">
-                    <thead>
-                        <tr>
-                            <th>Componente</th>
-                            <th>Quantidade por Porção (50g)</th>
-                            <th>% VD (*)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Valor Energético</td>
-                            <td>290 kcal = 1218 kJ</td>
-                            <td>15%</td>
-                        </tr>
-                        <tr>
-                            <td>Carboidratos</td>
-                            <td>15g</td>
-                            <td>5%</td>
-                        </tr>
-                        <tr>
-                            <td>Proteínas</td>
-                            <td>9g</td>
-                            <td>12%</td>
-                        </tr>
-                        <tr>
-                            <td>Gorduras Totais</td>
-                            <td>22g</td>
-                            <td>40%</td>
-                        </tr>
-                        <tr>
-                            <td>Gorduras Saturadas</td>
-                            <td>4g</td>
-                            <td>18%</td>
-                        </tr>
-                        <tr>
-                            <td>Fibra Alimentar</td>
-                            <td>1.8g</td>
-                            <td>7%</td>
-                        </tr>
-                        <tr>
-                            <td>Sódio</td>
-                            <td>8g (Sem sal adicionado)</td>
-                            <td>0%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
+    <main class="container">
+        <div class="store-grid">
+            
+            <div class="main-content">
 
-    <section id="passos" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Como Comprar em Poucos Cliques</h2>
-                <p>Processo simples, rápido e transparente.</p>
-            </div>
-            <div class="steps-grid">
-                <div class="step-item">
-                    <div class="step-num">1</div>
-                    <h4>Escolha a Quantidade</h4>
-                    <p>A partir de 500g com cálculo de preço automático.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">2</div>
-                    <h4>Informe seus Dados</h4>
-                    <p>Apenas nome e telefone para identificação.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">3</div>
-                    <h4>Escolha a Entrega</h4>
-                    <p>Retirada combinada ou Uber Entrega para São Luís.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">4</div>
-                    <h4>Efetue o Pagamento</h4>
-                    <p>Pague via Pix instantâneo ou Cartão de Crédito.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-num">5</div>
-                    <h4>Envie o Comprovante</h4>
-                    <p>Encaminhe o comprovante via WhatsApp para confirmação rápida.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section bg-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>Opinião de Nossos Clientes</h2>
-                <p>Espaço reservado para as avaliações reais registradas após o recebimento dos pedidos.</p>
-            </div>
-            <div class="empty-reviews-box card text-center">
-                <div class="icon" style="font-size: 2.5rem; margin-bottom: 1rem;">💬</div>
-                <h3>Seja um dos primeiros a avaliar!</h3>
-                <p>Após receber o seu pedido, envie sua opinião no nosso WhatsApp para que ela apareça aqui em nossa galeria de clientes satisfeitos.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Perguntas Frequentes</h2>
-            </div>
-            <div class="accordion">
-                <details class="accordion-item">
-                    <summary class="accordion-header">Atendem fora de São Luís - MA?</summary>
-                    <div class="accordion-content">
-                        <p>No momento nossas vendas e entregas são restritas exclusivamente para a cidade de São Luís – Maranhão.</p>
+                <section id="step1" class="step-content active">
+                    <div class="hero-carousel" id="carousel">
+                        <div class="carousel-track" id="carouselTrack">
+                            <div class="carousel-slide">
+                                <img src="assets/imagens/imagem castanha 1.png" alt="Castanha de Caju 1" loading="lazy" onerror="this.src='assets/imagens/castanha.jpg'">
+                                <div class="carousel-overlay">
+                                    <h1>Castanha de Caju Premium</h1>
+                                    <p>Selecionada artesanalmente, super crocante e saborosa.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/imagens/imagem castanha 2.png" alt="Castanha de Caju 2" loading="lazy" onerror="this.src='assets/imagens/castanha.jpg'">
+                                <div class="carousel-overlay">
+                                    <h1>Qualidade Inigualável</h1>
+                                    <p>Embalada no ponto certo para manter o frescor absoluto.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active" onclick="setSlide(0)"></span>
+                            <span class="dot" onclick="setSlide(1)"></span>
+                        </div>
                     </div>
-                </details>
-                <details class="accordion-item">
-                    <summary class="accordion-header">Qual é a quantidade mínima para pedido?</summary>
-                    <div class="accordion-content">
-                        <p>A quantidade mínima por pedido é de 500g (R$ 50,00), com incrementos de 100g.</p>
-                    </div>
-                </details>
-                <details class="accordion-item">
-                    <summary class="accordion-header">Como funciona o Uber Entrega?</summary>
-                    <div class="accordion-content">
-                        <p>Ao escolher a modalidade Uber Entrega, o cliente fica responsável por solicitar o motorista no aplicativo Uber e efetuar o pagamento da taxa da corrida diretamente no app do Uber.</p>
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <div>
-                <h3>Castanha de Caju Premium</h3>
-                <p>Venda exclusiva para São Luís - MA.</p>
+                    <div class="location-alert">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div><strong>Atenção:</strong> Venda e entrega realizadas exclusivamente para <strong>São Luís – Maranhão</strong>.</div>
+                    </div>
+
+                    <div class="card">
+                        <h2 class="card-title">Escolha a Quantidade</h2>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Preço por kg: <strong>R$ 100,00</strong>. Pedido mínimo a partir de 500g.</p>
+
+                        <div class="qty-selector">
+                            <button type="button" class="btn-qty" onclick="changeQty(-100)">-</button>
+                            <div class="qty-display">
+                                <div class="qty-amount" id="qtyText">500 g</div>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Incrementos de 100g</span>
+                            </div>
+                            <button type="button" class="btn-qty" onclick="changeQty(100)">+</button>
+                        </div>
+
+                        <button class="btn btn-primary" onclick="goToStep(2)">Comprar Agora</button>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Sobre a Nossa Castanha</h3>
+                        <p>Nossa castanha de caju passa por um rigoroso processo de seleção. Garantimos um produto torrado e embalado com máxima higiene, preservando sua crocância natural.</p>
+
+                        <h4 style="margin: 1.2rem 0 0.5rem 0;">Benefícios do Consumo:</h4>
+                        <ul style="padding-left: 1.2rem; color: var(--text-muted);">
+                            <li>Rica em gorduras boas (monoinsaturadas e poli-insaturadas).</li>
+                            <li>Fonte de minerais essenciais como Magnésio, Zinco e Ferro.</li>
+                            <li>Auxilia na saúde do coração e imunidade.</li>
+                        </ul>
+
+                        <h4 style="margin: 1.5rem 0 0.5rem 0;">Tabela Nutricional (Porção 15g):</h4>
+                        <table class="nutri-table">
+                            <thead><tr><th>Nutriente</th><th>Quantidade</th></tr></thead>
+                            <tbody>
+                                <tr><td>Valor Energético</td><td>88 kcal</td></tr>
+                                <tr><td>Carboidratos</td><td>4,5g</td></tr>
+                                <tr><td>Proteínas</td><td>2,7g</td></tr>
+                                <tr><td>Gorduras Totais</td><td>6,9g</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Como Comprar</h3>
+                        <ol style="padding-left: 1.2rem;">
+                            <li>Escolha a quantidade desejada.</li>
+                            <li>Informe seu nome e telefone.</li>
+                            <li>Escolha a forma de entrega.</li>
+                            <li>Faça o pagamento via Pix e envie o comprovante.</li>
+                        </ol>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Perguntas Frequentes (FAQ)</h3>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Atendem outras cidades? <span>+</span></div>
+                            <div class="faq-answer">No momento, as vendas e entregas são exclusivas para São Luís – MA.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFaq(this)">Como funciona o Uber Entrega? <span>+</span></div>
+                            <div class="faq-answer">O cliente faz a solicitação e o pagamento da corrida diretamente no app do Uber.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="step2" class="step-content">
+                    <div class="card">
+                        <h2 class="card-title">Dados do Cliente & Entrega</h2>
+                        <form id="checkoutForm" onsubmit="event.preventDefault(); goToStep(3);">
+                            <div class="form-group">
+                                <label for="clientName">Nome Completo *</label>
+                                <input type="text" id="clientName" class="form-control" placeholder="Digite seu nome completo" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="clientPhone">Telefone / WhatsApp *</label>
+                                <input type="tel" id="clientPhone" class="form-control" placeholder="(98) 99999-9999" required oninput="applyPhoneMask(this)">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="clientNotes">Observações (opcional)</label>
+                                <textarea id="clientNotes" class="form-control" rows="2" placeholder="Instruções para entrega"></textarea>
+                            </div>
+
+                            <h3 style="font-size: 1.1rem; margin: 1.5rem 0 1rem 0;">Forma de Entrega (São Luís - MA)</h3>
+                            <div class="delivery-options">
+                                <label class="radio-card selected" id="deliv1Card">
+                                    <input type="radio" name="deliveryMethod" value="Retirada combinada com Márcinha" checked onclick="selectDelivery('deliv1Card')">
+                                    <div>
+                                        <strong>Retirada combinada com Márcinha</strong>
+                                        <p style="font-size: 0.85rem; color: var(--text-muted);">Acorde o local e horário diretamente pelo WhatsApp após o pedido.</p>
+                                    </div>
+                                </label>
+
+                                <label class="radio-card" id="deliv2Card">
+                                    <input type="radio" name="deliveryMethod" value="Uber Entrega solicitado e pago pelo cliente" onclick="selectDelivery('deliv2Card')">
+                                    <div>
+                                        <strong>Uber Entrega (Solicitado e Pago pelo Cliente)</strong>
+                                        <p style="font-size: 0.85rem; color: var(--text-muted);">Você solicita a corrida pelo app Uber e entregamos ao motorista.</p>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-secondary" onclick="goToStep(1)">Voltar</button>
+                                <button type="submit" class="btn btn-primary">Ir para Pagamento</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section id="step3" class="step-content">
+                    <div class="card">
+                        <h2 class="card-title">Pagamento</h2>
+
+                        <div class="payment-options">
+                            <label class="radio-card selected" id="payPixCard">
+                                <input type="radio" name="paymentMethod" value="Pix" checked onclick="selectPayment('payPixCard', 'pixArea')">
+                                <div>
+                                    <strong>Pix (Aprovação Instantânea)</strong>
+                                    <p style="font-size: 0.85rem; color: var(--text-muted);">Pague via QR Code ou Copie e Cole a chave.</p>
+                                </div>
+                            </label>
+
+                            <label class="radio-card" id="payCardCard">
+                                <input type="radio" name="paymentMethod" value="Cartão de Crédito" onclick="selectPayment('payCardCard', 'cardArea')">
+                                <div>
+                                    <strong>Cartão de Crédito</strong>
+                                    <p style="font-size: 0.85rem; color: var(--text-muted);">Estrutura preparada para futura integração com Mercado Pago.</p>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div id="pixArea" style="margin-top: 1.5rem;">
+                            <div class="qrcode-wrapper">
+                                <p style="font-weight: 600; margin-bottom: 0.5rem;">Escaneie o QR Code abaixo:</p>
+                                <img src="assets/imagens/qrcode.jpeg" alt="QR Code PIX para pagamento" onerror="this.alt='QR Code Indisponível'">
+                                <br>
+                                <button type="button" class="btn btn-secondary" style="width: auto; margin: 0 auto;" onclick="copyPix()">Copiar Chave Pix</button>
+                            </div>
+                        </div>
+
+                        <div id="cardArea" style="display: none; margin-top: 1.5rem; padding: 1rem; border: 1px dashed var(--border); border-radius: var(--radius-sm);">
+                            <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center;">
+                                💳 Integração com Mercado Pago preparada.<br>Por enquanto, finalize via Pix.
+                            </p>
+                        </div>
+
+                        <div style="margin-top: 1.5rem;">
+                            <button class="btn btn-whatsapp" onclick="openContactModal()">Enviar Comprovante pelo WhatsApp</button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-secondary" onclick="goToStep(2)">Voltar</button>
+                                <button type="button" class="btn btn-primary" onclick="goToStep(4)">Ver Resumo do Pedido</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="step4" class="step-content">
+                    <div class="card" style="text-align: center;">
+                        <h2 style="color: var(--primary);">Pedido Gerado com Sucesso!</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Resumo detalhado do seu pedido:</p>
+
+                        <div style="background: var(--bg-light); text-align: left; padding: 1.25rem; border-radius: var(--radius-sm); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                            <p><strong>Nº do Pedido:</strong> <span id="confOrderNum">#0000</span></p>
+                            <p><strong>Data/Hora:</strong> <span id="confDateTime">-</span></p>
+                            <p><strong>Nome:</strong> <span id="confName">-</span></p>
+                            <p><strong>Telefone:</strong> <span id="confPhone">-</span></p>
+                            <p><strong>Quantidade:</strong> <span id="confQty">-</span></p>
+                            <p><strong>Valor Total:</strong> <span id="confTotal">-</span></p>
+                            <p><strong>Forma de Entrega:</strong> <span id="confDelivery">-</span></p>
+                            <p><strong>Pagamento:</strong> <span id="confPayment">-</span></p>
+                        </div>
+
+                        <button class="btn btn-whatsapp" onclick="openContactModal()">Enviar Comprovante pelo WhatsApp</button>
+                    </div>
+                </section>
+
             </div>
-            <div>
-                <h4>Contatos Rápidos</h4>
-                <p>Dani: (98) 99238-8693</p>
-                <p>Márcinha: (98) 99964-7680</p>
-            </div>
+
+            <aside class="summary-box">
+                <div class="card">
+                    <h3 class="card-title">Resumo do Pedido</h3>
+                    <div class="summary-row"><span>Produto:</span><strong>Castanha de Caju</strong></div>
+                    <div class="summary-row"><span>Valor por kg:</span><span>R$ 100,00</span></div>
+                    <div class="summary-row"><span>Quantidade:</span><strong id="summaryQty">500 g</strong></div>
+                    <div class="summary-row"><span>Entrega:</span><span id="summaryDelivery" style="text-align: right;">Retirada</span></div>
+                    <div class="summary-row total"><span>Total:</span><span id="summaryTotal">R$ 50,00</span></div>
+                </div>
+            </aside>
+
         </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 Castanha de Caju Selecionada. Todos os direitos reservados.</p>
-            </div>
+    </main>
+
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <h3>Escolha o Contato</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Para quem deseja enviar o comprovante?</p>
+
+            <a href="#" class="contact-btn" onclick="sendWhatsApp('5598992388693')">
+                <div>
+                    <strong>Dani</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">(98) 99238-8693</div>
+                </div>
+            </a>
+
+            <a href="#" class="contact-btn" onclick="sendWhatsApp('5598999647680')">
+                <div>
+                    <strong>Márcinha</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">(98) 99964-7680</div>
+                </div>
+            </a>
+
+            <button type="button" class="btn btn-secondary" style="margin-top: 1rem;" onclick="closeContactModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <a href="#" class="whatsapp-float" onclick="openContactModal(); return false;" aria-label="Atendimento via WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    </a>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+    <footer>
+        <div class="container">
+            <h4>Castanha de Caju Premium - São Luís MA</h4>
+            <p>Venda exclusiva para São Luís - MA. Qualidade e sabor garantidos.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/5598992388693" class="whatsapp-float" target="_blank" aria-label="Atendimento via WhatsApp">
-        💬
-    </a>
-    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
-
-    <script src="script.js"></script>
-</body>
-</html> 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprar Castanha de Caju - Seleção de Quantidade</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo-link">
-                <span class="logo-fallback">Castanha<span>Premium</span></span>
-            </a>
-            <div class="step-indicator-bar">
-                <span class="step active">1. Produto</span> &gt;
-                <span class="step">2. Dados & Entrega</span> &gt;
-                <span class="step">3. Pagamento</span>
-            </div>
-        </div>
-    </header>
-
-    <main class="container section">
-        <div class="product-page-layout">
-            <div class="product-gallery card">
-                <img src="assets/imagens/castanha.jpg" alt="Castanha de Caju Inteira e Crocante" id="mainProductImg" class="product-main-img" onerror="this.src='assets/imagens/imagem castanha 1.png'">
-            </div>
-
-            <div class="product-details card">
-                <span class="badge">Disponível em Estoque</span>
-                <h1>Castanha de Caju Selecionada (1kg = R$ 100,00)</h1>
-                <p class="product-desc">Castanhas torradas, selecionadas manualmente, sem conservantes. Crocância única e alto valor nutricional.</p>
-                
-                <hr class="divider">
-
-                <div class="selector-box">
-                    <label>Escolha a Quantidade Desejada:</label>
-                    <div class="quantity-controls">
-                        <button type="button" class="btn-qty" id="btnMinus" aria-label="Diminuir quantidade">-</button>
-                        <span class="qty-display" id="qtyDisplay">500 g</span>
-                        <button type="button" class="btn-qty" id="btnPlus" aria-label="Aumentar quantidade">+</button>
-                    </div>
-                    <small class="helper-text">Mínimo: 500g | Incremento: 100g</small>
-                </div>
-
-                <div class="price-box">
-                    <span>Valor Total:</span>
-                    <span class="price-value" id="totalPrice">R$ 50,00</span>
-                </div>
-
-                <button class="btn btn-gold btn-block btn-lg" id="btnGoToCheckout">Avançar para Checkout →</button>
-            </div>
-        </div>
-    </main>
-
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Informações do Pedido</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo-link">
-                <span class="logo-fallback">Castanha<span>Premium</span></span>
-            </a>
-            <div class="step-indicator-bar">
-                <span class="step">1. Produto</span> &gt;
-                <span class="step active">2. Dados & Entrega</span> &gt;
-                <span class="step">3. Pagamento</span>
-            </div>
-        </div>
-    </header>
-
-    <main class="container section">
-        <div class="checkout-grid">
-            <div class="card checkout-form-card">
-                <h2>Seus Dados</h2>
-                <form id="checkoutForm" novalidate>
-                    <div class="form-group">
-                        <label for="nome">Nome Completo *</label>
-                        <input type="text" id="nome" required placeholder="Digite seu nome completo" class="form-control">
-                        <span class="error-msg" id="errorNome"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="telefone">Telefone / WhatsApp *</label>
-                        <input type="tel" id="telefone" maxlength="15" required placeholder="(98) 99999-9999" class="form-control">
-                        <span class="error-msg" id="errorTelefone"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="observacoes">Observações (Opcional)</label>
-                        <textarea id="observacoes" placeholder="Ex: Ponto de referência ou preferências de entrega" class="form-control" rows="3"></textarea>
-                    </div>
-
-                    <hr class="divider">
-
-                    <h2>Forma de Entrega</h2>
-                    <div class="alert-box info-alert">
-                        📍 <strong>Aviso Importante:</strong> Vendas e entregas exclusivas para <strong>São Luís – MA</strong>.
-                    </div>
-
-                    <div class="radio-group">
-                        <label class="radio-option">
-                            <input type="radio" name="entrega" value="Retirada combinada com Márcinha" checked>
-                            <div class="radio-content">
-                                <strong>Retirada combinada com Márcinha</strong>
-                                <span>Combine o local e horário de retirada diretamente via WhatsApp.</span>
-                            </div>
-                        </label>
-
-                        <label class="radio-option">
-                            <input type="radio" name="entrega" value="Uber Entrega (solicitado e pago pelo cliente)">
-                            <div class="radio-content">
-                                <strong>Uber Entrega (Solicitado e Pago pelo Cliente)</strong>
-                                <span>Você solicita a corrida pelo aplicativo Uber e realiza o pagamento do frete ao app.</span>
-                            </div>
-                        </label>
-                    </div>
-
-                    <button type="submit" class="btn btn-gold btn-block btn-lg" style="margin-top: 2rem;">Ir para o Pagamento →</button>
-                </form>
-            </div>
-
-            <aside class="card order-summary-card">
-                <h3>Resumo do Pedido</h3>
-                <hr class="divider">
-                <div class="summary-row">
-                    <span>Produto:</span>
-                    <strong>Castanha de Caju</strong>
-                </div>
-                <div class="summary-row">
-                    <span>Quantidade:</span>
-                    <strong id="summaryQty">500 g</strong>
-                </div>
-                <div class="summary-row">
-                    <span>Preço por kg:</span>
-                    <span>R$ 100,00</span>
-                </div>
-                <hr class="divider">
-                <div class="summary-row total-row">
-                    <span>Total a Pagar:</span>
-                    <strong id="summaryTotal" class="price-value">R$ 50,00</strong>
-                </div>
-            </aside>
-        </div>
-    </main>
-
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagamento & Confirmação</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
-</head>
-<body>
-    <header class="header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo-link">
-                <span class="logo-fallback">Castanha<span>Premium</span></span>
-            </a>
-            <div class="step-indicator-bar">
-                <span class="step">1. Produto</span> &gt;
-                <span class="step">2. Dados & Entrega</span> &gt;
-                <span class="step active">3. Pagamento</span>
-            </div>
-        </div>
-    </header>
-
-    <main class="container section">
-        <div class="checkout-grid">
-            <div class="card checkout-form-card">
-                <h2>Escolha a Forma de Pagamento</h2>
-
-                <div class="payment-tabs">
-                    <button class="tab-btn active" data-tab="tab-pix">📱 Pix (Instantâneo)</button>
-                    <button class="tab-btn" data-tab="tab-card">💳 Cartão de Crédito</button>
-                </div>
-
-                <div id="tab-pix" class="tab-content active">
-                    <div class="pix-payment-box text-center">
-                        <p>Escaneie o QR Code abaixo com seu aplicativo de banco:</p>
-                        <img src="assets/imagens/qrcode.jpeg" alt="QR Code Pix" class="qrcode-img" onerror="this.alt='QR Code indisponível no momento'">
-                        
-                        <div class="copy-pix-area">
-                            <label>Chave Pix Copia e Cola / Chave Direta:</label>
-                            <div class="input-btn-group">
-                                <input type="text" id="pixKeyInput" readonly value="financeiro@castanhapremium.com.br" class="form-control">
-                                <button type="button" class="btn btn-primary" id="btnCopyPix">Copiar</button>
-                            </div>
-                        </div>
-
-                        <hr class="divider">
-
-                        <h3>Após o pagamento, escolha para quem enviar o comprovante:</h3>
-                        <p class="helper-text" style="margin-bottom: 1rem;">O pedido será preparado e liberado assim que o comprovante for enviado.</p>
-
-                        <div class="whatsapp-send-grid">
-                            <button type="button" class="btn btn-whatsapp btn-block" id="btnSendDani">
-                                Enviar para <strong>Dani</strong><br><small>(98) 99238-8693</small>
-                            </button>
-                            <button type="button" class="btn btn-whatsapp btn-block" id="btnSendMarcinha">
-                                Enviar para <strong>Márcinha</strong><br><small>(98) 99964-7680</small>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="tab-card" class="tab-content">
-                    <form id="form-checkout">
-                        <div class="form-group">
-                            <label for="form-checkout__cardNumber">Número do Cartão</label>
-                            <div id="form-checkout__cardNumber" class="form-control mp-input"></div>
-                        </div>
-                        <div class="grid grid-2">
-                            <div class="form-group">
-                                <label for="form-checkout__expirationDate">Vencimento</label>
-                                <div id="form-checkout__expirationDate" class="form-control mp-input"></div>
-                            </div>
-                            <div class="form-group">
-                                <label for="form-checkout__securityCode">CVV</label>
-                                <div id="form-checkout__securityCode" class="form-control mp-input"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="form-checkout__cardholderName">Nome impresso no cartão</label>
-                            <input type="text" id="form-checkout__cardholderName" class="form-control" />
-                        </div>
-                        <div class="form-group">
-                            <label for="form-checkout__issuer">Banco Emissor</label>
-                            <select id="form-checkout__issuer" class="form-control"></select>
-                        </div>
-                        <div class="form-group">
-                            <label for="form-checkout__installments">Parcelas</label>
-                            <select id="form-checkout__installments" class="form-control"></select>
-                        </div>
-                        <button type="submit" id="form-checkout__submit" class="btn btn-gold btn-block btn-lg">Finalizar Pagamento</button>
-                    </form>
-                </div>
-            </div>
-
-            <aside class="card order-summary-card">
-                <h3>Detalhes do Pedido</h3>
-                <hr class="divider">
-                <div class="summary-row"><span>Cliente:</span><strong id="confirmNome">-</strong></div>
-                <div class="summary-row"><span>Telefone:</span><strong id="confirmTelefone">-</strong></div>
-                <div class="summary-row"><span>Quantidade:</span><strong id="confirmQty">-</strong></div>
-                <div class="summary-row"><span>Entrega:</span><strong id="confirmEntrega" style="font-size:0.85rem; text-align:right;">-</strong></div>
-                <hr class="divider">
-                <div class="summary-row total-row">
-                    <span>Total:</span>
-                    <strong id="confirmTotal" class="price-value">R$ 0,00</strong>
-                </div>
-            </aside>
-        </div>
-    </main>
-
-    <script src="script.js"></script>
-</body>
-</html>
-/* ==========================================================================
-   DESIGN SYSTEM - CASTANHA PREMIUM
-   Cores: Branco, Bege, Verde Nutritivo, Marrom Terra, Dourado Discreto
-   ========================================================================== */
-
-:root {
-    --bg-main: #FAF8F5;
-    --bg-card: #FFFFFF;
-    --color-primary: #1C3A27; /* Verde Escuro Elegante */
-    --color-primary-light: #2D5A3E;
-    --color-secondary: #8C6239; /* Marrom Castanha */
-    --color-accent: #C5A059; /* Dourado Discreto */
-    --color-text: #2B2B2B;
-    --color-muted: #666666;
-    --color-border: #E5E0D8;
-    
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Plus Jakarta Sans', sans-serif;
-
-    --radius-sm: 8px;
-    --radius-md: 16px;
-    --radius-lg: 24px;
-    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
-    --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* Reset & Base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--bg-main);
-    color: var(--color-text);
-    font-family: var(--font-body);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4 {
-    font-family: var(--font-heading);
-    color: var(--color-primary);
-    line-height: 1.2;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section {
-    padding: 5rem 0;
-}
-
-.bg-light {
-    background-color: #F3EFEA;
-}
-
-/* Header Navbar */
-.header {
-    position: sticky;
-    top: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-border);
-    z-index: 1000;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-}
-
-.logo-fallback {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--color-primary);
-}
-
-.logo-fallback span {
-    color: var(--color-accent);
-}
-
-.logo-img {
-    max-height: 50px;
-}
-
-.nav-menu {
-    display: flex;
-    gap: 2rem;
-}
-
-.nav-menu a {
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.nav-menu a:hover {
-    color: var(--color-accent);
-}
-
-/* Hero Carousel */
-.hero {
-    position: relative;
-    height: 80vh;
-    min-height: 500px;
-    overflow: hidden;
-}
-
-.hero-carousel {
-    height: 100%;
-    position: relative;
-}
-
-.slide {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    display: flex;
-    align-items: center;
-}
-
-.slide.active {
-    opacity: 1;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(28,58,39,0.85) 0%, rgba(28,58,39,0.3) 100%);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 10;
-    color: #FFFFFF;
-    max-width: 650px;
-}
-
-.hero-content h1 {
-    color: #FFFFFF;
-    font-size: 3rem;
-    margin: 1rem 0;
-}
-
-.badge {
-    background: var(--color-accent);
-    color: #FFF;
-    padding: 0.3rem 1rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    display: inline-block;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.carousel-indicators {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 20;
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.indicator.active {
-    background: var(--color-accent);
-    width: 30px;
-    border-radius: 10px;
-}
-
-/* Botões */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.8rem 1.8rem;
-    border-radius: var(--radius-sm);
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    transition: var(--transition);
-}
-
-.btn-primary { background: var(--color-primary); color: #FFF; }
-.btn-primary:hover { background: var(--color-primary-light); }
-
-.btn-gold { background: var(--color-accent); color: #FFF; }
-.btn-gold:hover { filter: brightness(1.1); transform: translateY(-2px); }
-
-.btn-whatsapp-hero { background: #25D366; color: #FFF; }
-.btn-whatsapp-hero:hover { background: #1EBE5B; }
-
-.btn-whatsapp { background: #25D366; color: #FFF; padding: 1rem; }
-.btn-whatsapp:hover { background: #1EBE5B; }
-
-.btn-block { width: 100%; display: block; text-center; }
-.btn-lg { padding: 1.2rem; font-size: 1.1rem; }
-
-/* Cards & Grid */
-.card {
-    background: var(--bg-card);
-    padding: 2rem;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-soft);
-    border: 1px solid var(--color-border);
-    transition: var(--transition);
-}
-
-.card:hover { box-shadow: var(--shadow-hover); }
-
-.grid { display: grid; gap: 2rem; }
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-
-.section-header {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 3rem auto;
-}
-
-.section-header h2 { font-size: 2.2rem; margin-bottom: 0.5rem; }
-
-/* Tabela Nutricional */
-.table-responsive { overflow-x: auto; }
-.nutri-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--bg-card);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-}
-
-.nutri-table th, .nutri-table td {
-    padding: 1rem 1.5rem;
-    text-align: left;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.nutri-table th { background: var(--color-primary); color: #FFF; }
-
-/* Passo a Passo */
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-}
-
-.step-item {
-    background: var(--bg-card);
-    padding: 1.5rem;
-    border-radius: var(--radius-sm);
-    text-align: center;
-    border: 1px solid var(--color-border);
-}
-
-.step-num {
-    width: 40px;
-    height: 40px;
-    background: var(--color-accent);
-    color: #FFF;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    margin: 0 auto 1rem auto;
-}
-
-/* FAQ Accordion */
-.accordion { max-width: 800px; margin: 0 auto; }
-.accordion-item {
-    background: var(--bg-card);
-    margin-bottom: 1rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--color-border);
-}
-
-.accordion-header {
-    padding: 1.2rem;
-    font-weight: 600;
-    cursor: pointer;
-    list-style: none;
-    color: var(--color-primary);
-}
-
-.accordion-content { padding: 1.2rem; border-top: 1px solid var(--color-border); }
-
-/* Produto Page */
-.product-page-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-}
-
-.product-main-img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: var(--radius-md);
-}
-
-.quantity-controls {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem 0;
-}
-
-.btn-qty {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 1px solid var(--color-border);
-    background: #FFF;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn-qty:hover { background: var(--color-accent); color: #FFF; }
-.qty-display { font-size: 1.5rem; font-weight: 700; min-width: 80px; text-align: center; }
-
-.price-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem 0;
-    font-size: 1.2rem;
-}
-
-.price-value { font-size: 2rem; font-weight: 800; color: var(--color-primary); }
-
-/* Checkout Grid */
-.checkout-grid {
-    display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: 2rem;
-}
-
-.form-group { margin-bottom: 1.5rem; }
-.form-group label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
-.form-control {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--color-border);
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-.form-control:focus { outline: 2px solid var(--color-accent); }
-
-.radio-group { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
-.radio-option {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-}
-
-.radio-option input { margin-top: 0.3rem; }
-
-.alert-box {
-    padding: 1rem;
-    border-radius: var(--radius-sm);
-    margin: 1rem 0;
-}
-.info-alert { background: #EAF4FE; border: 1px solid #BEE0FF; color: #1E4265; }
-
-.summary-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.8rem;
-}
-.total-row { font-size: 1.2rem; margin-top: 1rem; }
-
-.divider {
-    border: 0;
-    height: 1px;
-    background: var(--color-border);
-    margin: 1.5rem 0;
-}
-
-/* Confirmation / Tabs */
-.payment-tabs {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.tab-btn {
-    flex: 1;
-    padding: 1rem;
-    border: 1px solid var(--color-border);
-    background: #FFF;
-    border-radius: var(--radius-sm);
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.tab-btn.active { background: var(--color-primary); color: #FFF; }
-.tab-content { display: none; }
-.tab-content.active { display: block; }
-
-.qrcode-img {
-    max-width: 200px;
-    border-radius: var(--radius-sm);
-    margin: 1.5rem auto;
-}
-
-.input-btn-group { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
-
-.whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    color: #FFF;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    z-index: 1000;
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    width: 45px;
-    height: 45px;
-    background: var(--color-primary);
-    color: #FFF;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    display: none;
-    z-index: 1000;
-}
-
-.error-msg { color: #D32F2F; font-size: 0.85rem; margin-top: 0.3rem; display: block; }
-
-/* Step Indicator Bar */
-.step-indicator-bar { font-size: 0.9rem; font-weight: 600; color: var(--color-muted); }
-.step-indicator-bar .step.active { color: var(--color-primary); text-decoration: underline; }
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .grid-2, .grid-3, .product-page-layout, .checkout-grid { grid-template-columns: 1fr; }
-    .hero-content h1 { font-size: 2rem; }
-    .nav-menu { display: none; }
-/**
- * Gerenciador de Estado Local para o Checkout
- */
-const Store = {
-    PRECO_POR_KG: 100,
-    MIN_GRAMAS: 500,
-    INCREMENTO_GRAMAS: 100,
-
-    getState() {
-        return {
-            gramas: parseInt(localStorage.getItem('cart_gramas')) || 500,
-            nome: localStorage.getItem('cart_nome') || '',
-            telefone: localStorage.getItem('cart_telefone') || '',
-            observacoes: localStorage.getItem('cart_observacoes') || '',
-            entrega: localStorage.getItem('cart_entrega') || 'Retirada combinada com Márcinha'
+    <script>
+        // Estado do Pedido
+        let orderState = {
+            grams: 500,
+            pricePerKg: 100,
+            totalPrice: 50,
+            step: 1,
+            clientName: '',
+            clientPhone: '',
+            clientNotes: '',
+            deliveryMethod: 'Retirada combinada com Márcinha',
+            paymentMethod: 'Pix',
+            orderNumber: '#' + Math.floor(1000 + Math.random() * 9000),
+            dateTime: ''
         };
-    },
 
-    setState(key, value) {
-        localStorage.setItem(`cart_${key}`, value);
-    },
+        const qtyText = document.getElementById('qtyText');
+        const summaryQty = document.getElementById('summaryQty');
+        const summaryTotal = document.getElementById('summaryTotal');
+        const summaryDelivery = document.getElementById('summaryDelivery');
+        const progressBarFill = document.getElementById('progressBarFill');
 
-    calcularValor(gramas) {
-        return (gramas / 1000) * this.PRECO_POR_KG;
-    },
+        // Cálculo Automático: Valor = (gramas ÷ 1000) × 100
+        function updateCalculations() {
+            orderState.totalPrice = (orderState.grams / 1000) * orderState.pricePerKg;
+            
+            const qtyFormatted = orderState.grams >= 1000 ? 
+                (orderState.grams / 1000).toLocaleString('pt-BR', {minimumFractionDigits: 0, maximumFractionDigits: 1}) + ' kg' : 
+                orderState.grams + ' g';
 
-    formatarMoeda(valor) {
-        return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    }
-};
+            const priceFormatted = orderState.totalPrice.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
 
-// --- Inicialização e Execução por Página ---
-document.addEventListener('DOMContentLoaded', () => {
-    initHeroCarousel();
-    initBackToTop();
-    
-    const page = window.location.pathname.split('/').pop();
-
-    if (page === 'produto.html' || page === '') {
-        initProductPage();
-    }
-    if (page === 'checkout.html') {
-        initCheckoutPage();
-    }
-    if (page === 'confirmacao.html') {
-        initConfirmationPage();
-    }
-});
-
-/* Hero Carousel */
-function initHeroCarousel() {
-    const slides = document.querySelectorAll('.hero-carousel .slide');
-    const indicators = document.querySelectorAll('.carousel-indicators .indicator');
-    if (!slides.length) return;
-
-    let currentIndex = 0;
-    setInterval(() => {
-        slides[currentIndex].classList.remove('active');
-        indicators[currentIndex]?.classList.remove('active');
-        currentIndex = (currentIndex + 1) % slides.length;
-        slides[currentIndex].classList.add('active');
-        indicators[currentIndex]?.classList.add('active');
-    }, 5000);
-}
-
-/* Botão Voltar ao Topo */
-function initBackToTop() {
-    const btn = document.getElementById('backToTop');
-    if (!btn) return;
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            btn.style.display = 'block';
-        } else {
-            btn.style.display = 'none';
-        }
-    });
-
-    btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
-
-/* Página do Produto */
-function initProductPage() {
-    const qtyDisplay = document.getElementById('qtyDisplay');
-    const totalPrice = document.getElementById('totalPrice');
-    const btnMinus = document.getElementById('btnMinus');
-    const btnPlus = document.getElementById('btnPlus');
-    const btnGoToCheckout = document.getElementById('btnGoToCheckout');
-
-    if (!qtyDisplay) return;
-
-    let currentGramas = Store.getState().gramas;
-
-    function render() {
-        const total = Store.calcularValor(currentGramas);
-        qtyDisplay.textContent = currentGramas >= 1000 ? `${(currentGramas / 1000).toFixed(1)} kg` : `${currentGramas} g`;
-        totalPrice.textContent = Store.formatarMoeda(total);
-        Store.setState('gramas', currentGramas);
-    }
-
-    btnMinus.addEventListener('click', () => {
-        if (currentGramas > Store.MIN_GRAMAS) {
-            currentGramas -= Store.INCREMENTO_GRAMAS;
-            render();
-        }
-    });
-
-    btnPlus.addEventListener('click', () => {
-        currentGramas += Store.INCREMENTO_GRAMAS;
-        render();
-    });
-
-    btnGoToCheckout.addEventListener('click', () => {
-        window.location.href = 'checkout.html';
-    });
-
-    render();
-}
-
-/* Página de Checkout */
-function initCheckoutPage() {
-    const form = document.getElementById('checkoutForm');
-    const inputNome = document.getElementById('nome');
-    const inputTelefone = document.getElementById('telefone');
-    const inputObs = document.getElementById('observacoes');
-    const summaryQty = document.getElementById('summaryQty');
-    const summaryTotal = document.getElementById('summaryTotal');
-
-    if (!form) return;
-
-    const state = Store.getState();
-    summaryQty.textContent = state.gramas >= 1000 ? `${(state.gramas / 1000).toFixed(1)} kg` : `${state.gramas} g`;
-    summaryTotal.textContent = Store.formatarMoeda(Store.calcularValor(state.gramas));
-
-    // Máscara de Telefone
-    inputTelefone.addEventListener('input', (e) => {
-        let value = e.target.value.replace(/\D/g, '');
-        if (value.length > 11) value = value.slice(0, 11);
-        
-        if (value.length > 6) {
-            e.target.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
-        } else if (value.length > 2) {
-            e.target.value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-        } else {
-            e.target.value = value;
-        }
-    });
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        let valid = true;
-
-        if (inputNome.value.trim().length < 3) {
-            document.getElementById('errorNome').textContent = 'Digite seu nome completo.';
-            valid = false;
-        } else {
-            document.getElementById('errorNome').textContent = '';
+            qtyText.textContent = qtyFormatted;
+            summaryQty.textContent = qtyFormatted;
+            summaryTotal.textContent = priceFormatted;
         }
 
-        if (inputTelefone.value.replace(/\D/g, '').length < 10) {
-            document.getElementById('errorTelefone').textContent = 'Digite um telefone válido com DDD.';
-            valid = false;
-        } else {
-            document.getElementById('errorTelefone').textContent = '';
-        }
-
-        if (valid) {
-            const entregaSelected = document.querySelector('input[name="entrega"]:checked').value;
-            Store.setState('nome', inputNome.value.trim());
-            Store.setState('telefone', inputTelefone.value.trim());
-            Store.setState('observacoes', inputObs.value.trim());
-            Store.setState('entrega', entregaSelected);
-
-            window.location.href = 'confirmacao.html';
-        }
-    });
-}
-
-/* Página de Confirmação & Pagamento */
-function initConfirmationPage() {
-    const state = Store.getState();
-    const total = Store.calcularValor(state.gramas);
-
-    // Preenche resumo
-    document.getElementById('confirmNome').textContent = state.nome || 'Não informado';
-    document.getElementById('confirmTelefone').textContent = state.telefone || 'Não informado';
-    document.getElementById('confirmQty').textContent = state.gramas >= 1000 ? `${(state.gramas / 1000).toFixed(1)} kg` : `${state.gramas} g`;
-    document.getElementById('confirmEntrega').textContent = state.entrega;
-    document.getElementById('confirmTotal').textContent = Store.formatarMoeda(total);
-
-    // Gerenciador de Tabs
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(c => c.classList.remove('active'));
-
-            btn.classList.add('active');
-            document.getElementById(btn.dataset.tab).classList.add('active');
-        });
-    });
-
-    // Copiar Chave Pix
-    const btnCopyPix = document.getElementById('btnCopyPix');
-    if (btnCopyPix) {
-        btnCopyPix.addEventListener('click', () => {
-            const input = document.getElementById('pixKeyInput');
-            input.select();
-            navigator.clipboard.writeText(input.value);
-            btnCopyPix.textContent = 'Copiado!';
-            setTimeout(() => btnCopyPix.textContent = 'Copiar', 2000);
-        });
-    }
-
-    // Envio WhatsApp
-    function montarMensagemWhatsApp() {
-        const text = `Olá! Acabei de realizar a compra de Castanha de Caju.\n\n` +
-            `*Dados do Pedido:*\n` +
-            `• Nome: ${state.nome}\n` +
-            `• Telefone: ${state.telefone}\n` +
-            `• Quantidade: ${state.gramas >= 1000 ? (state.gramas / 1000) + ' kg' : state.gramas + ' g'}\n` +
-            `• Valor Total: ${Store.formatarMoeda(total)}\n` +
-            `• Forma de Entrega: ${state.entrega}\n\n` +
-            `Seguem abaixo os dados do meu pedido e enviarei o comprovante em seguida.`;
-        return encodeURIComponent(text);
-    }
-
-    document.getElementById('btnSendDani')?.addEventListener('click', () => {
-        window.open(`https://wa.me/5598992388693?text=${montarMensagemWhatsApp()}`, '_blank');
-    });
-
-    document.getElementById('btnSendMarcinha')?.addEventListener('click', () => {
-        window.open(`https://wa.me/5598999647680?text=${montarMensagemWhatsApp()}`, '_blank');
-    });
-}
-            /**
- * Backend Node.js / Express para integração com Mercado Pago
- */
-const express = require('express');
-const cors = require('cors');
-const { MercadoPagoConfig, Payment } = require('mercadopago');
-
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-// INSERIR SUAS CREDENCIAIS OFICIAIS DO MERCADO PAGO AQUI:
-// Obtenha em: https://www.mercadopago.com.br/developers/panel
-const MP_ACCESS_TOKEN = process.env.MP_ACCESS_TOKEN || 'SEU_ACCESS_TOKEN_AQUI';
-
-const client = new MercadoPagoConfig({ accessToken: MP_ACCESS_TOKEN });
-const payment = new Payment(client);
-
-app.post('/api/process_payment', async (req, res) => {
-    try {
-        const { formData } = req.body;
-
-        const paymentData = {
-            body: {
-                transaction_amount: Number(formData.transaction_amount),
-                token: formData.token,
-                description: 'Castanha de Caju Premium',
-                installments: Number(formData.installments),
-                payment_method_id: formData.payment_method_id,
-                issuer_id: formData.issuer_id,
-                payer: {
-                    email: formData.payer.email,
-                    identification: {
-                        type: formData.payer.identification.type,
-                        number: formData.payer.identification.number
-                    }
-                }
+        function changeQty(delta) {
+            if (orderState.grams + delta >= 500) {
+                orderState.grams += delta;
+                updateCalculations();
             }
-        };
+        }
 
-        const result = await payment.create(paymentData);
-        return res.status(200).json({ status: result.status, id: result.id });
-    } catch (error) {
-        console.error('Erro ao processar pagamento:', error);
-        return res.status(500).json({ error: error.message });
-    }
-});
+        // Navegação de Etapas
+        function goToStep(stepNum) {
+            if (stepNum > 2) {
+                const nameInput = document.getElementById('clientName');
+                const phoneInput = document.getElementById('clientPhone');
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`)); {
-  "name": "castanha-caju-ecommerce",
-  "version": "1.0.0",
-  "description": "E-commerce de Alta Conversão para Venda de Castanha de Caju em São Luís - MA",
-  "main": "index.html",
-  "scripts": {
-    "start": "cd backend && npm start"
-  },
-  "keywords": ["ecommerce", "castanha-de-caju", "sao-luis", "javascript"],
-  "author": "Agencia Premium",
-  "license": "ISC"
-} {
-  "name": "castanha-caju-backend",
-  "version": "1.0.0",
-  "description": "Servidor Backend de Integração com Mercado Pago",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.19.2",
-    "mercadopago": "^2.0.11"
-  }
-} git init
-git add .
-git commit -m "Initial commit - E-commerce Castanha Premium"
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/castanha-caju-ecommerce.git
-git push -u origin main
+                if (!nameInput.checkValidity()) { nameInput.reportValidity(); return; }
+                if (!phoneInput.checkValidity()) { phoneInput.reportValidity(); return; }
+
+                orderState.clientName = nameInput.value;
+                orderState.clientPhone = phoneInput.value;
+                orderState.clientNotes = document.getElementById('clientNotes').value;
+            }
+
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.step-item').forEach((el, idx) => {
+                if (idx + 1 < stepNum) {
+                    el.classList.add('completed');
+                    el.classList.remove('active');
+                } else if (idx + 1 === stepNum) {
+                    el.classList.add('active');
+                    el.classList.remove('completed');
+                } else {
+                    el.classList.remove('active', 'completed');
+                }
+            });
+
+            document.getElementById(`step${stepNum}`).classList.add('active');
+            orderState.step = stepNum;
+
+            const progressPct = ((stepNum - 1) / 3) * 100;
+            progressBarFill.style.width = `${progressPct}%`;
+
+            if (stepNum === 4) {
+                const now = new Date();
+                orderState.dateTime = now.toLocaleDateString('pt-BR') + ' às ' + now.toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'});
+                
+                document.getElementById('confOrderNum').textContent = orderState.orderNumber;
+                document.getElementById('confDateTime').textContent = orderState.dateTime;
+                document.getElementById('confName').textContent = orderState.clientName;
+                document.getElementById('confPhone').textContent = orderState.clientPhone;
+                document.getElementById('confQty').textContent = summaryQty.textContent;
+                document.getElementById('confTotal').textContent = summaryTotal.textContent;
+                document.getElementById('confDelivery').textContent = orderState.deliveryMethod;
+                document.getElementById('confPayment').textContent = orderState.paymentMethod;
+            }
+
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function selectDelivery(cardId) {
+            document.querySelectorAll('.delivery-options .radio-card').forEach(c => c.classList.remove('selected'));
+            const card = document.getElementById(cardId);
+            card.classList.add('selected');
+            const radio = card.querySelector('input');
+            radio.checked = true;
+            orderState.deliveryMethod = radio.value;
+            summaryDelivery.textContent = radio.value.includes('Retirada') ? 'Retirada' : 'Uber Entrega';
+        }
+
+        function selectPayment(cardId, areaId) {
+            document.querySelectorAll('.payment-options .radio-card').forEach(c => c.classList.remove('selected'));
+            const card = document.getElementById(cardId);
+            card.classList.add('selected');
+            const radio = card.querySelector('input');
+            radio.checked = true;
+            orderState.paymentMethod = radio.value;
+
+            document.getElementById('pixArea').style.display = areaId === 'pixArea' ? 'block' : 'none';
+            document.getElementById('cardArea').style.display = areaId === 'cardArea' ? 'block' : 'none';
+        }
+
+        function applyPhoneMask(input) {
+            let value = input.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.slice(0, 11);
+            if (value.length > 6) {
+                value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+            } else if (value.length > 2) {
+                value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+            } else if (value.length > 0) {
+                value = `(${value}`;
+            }
+            input.value = value;
+        }
+
+        // Carrossel Simples
+        let currentSlide = 0;
+        const track = document.getElementById('carouselTrack');
+        const dots = document.querySelectorAll('.dot');
+
+        function setSlide(index) {
+            currentSlide = index;
+            track.style.transform = `translateX(-${index * 50}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        }
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % 2;
+            setSlide(currentSlide);
+        }, 5000);
+
+        function openContactModal() { document.getElementById('contactModal').classList.add('active'); }
+        function closeContactModal() { document.getElementById('contactModal').classList.remove('active'); }
+
+        // Formatação Automática da Mensagem de WhatsApp
+        function sendWhatsApp(phoneNum) {
+            const qtyTextFormatted = summaryQty.textContent;
+            const priceTextFormatted = summaryTotal.textContent;
+
+            const message = `Olá!\nAcabei de realizar a compra de Castanha de Caju.\n\n` +
+                            `*Nome:* ${orderState.clientName || 'Não informado'}\n` +
+                            `*Telefone:* ${orderState.clientPhone || 'Não informado'}\n` +
+                            `*Quantidade:* ${qtyTextFormatted}\n` +
+                            `*Valor:* ${priceTextFormatted}\n` +
+                            `*Forma de entrega:* ${orderState.deliveryMethod}\n\n` +
+                            `Segue meu comprovante.`;
+
+            window.open(`https://wa.me/${phoneNum}?text=${encodeURIComponent(message)}`, '_blank');
+            closeContactModal();
+        }
+
+        function copyPix() {
+            const pixKey = "00020126360014BR.GOV.BCB.PIX0114+5598999647680520400005303986540550.005802BR5920CASTANHA SAO LUIS6008SAO LUIS62070503***6304E2CA";
+            navigator.clipboard.writeText(pixKey).then(() => alert('Chave Pix copiada!')).catch(() => alert('Chave: +5598999647680'));
+        }
+
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+            element.querySelector('span').textContent = item.classList.contains('active') ? '-' : '+';
+        }
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 300);
+        });
+
+        updateCalculations();
+    </script>
+</body>
+</html>
