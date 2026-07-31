@@ -18,7 +18,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-    <!-- Biblioteca para gerar o QR Code do Pix diretamente no navegador (não depende de imagem salva) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
     <style>
@@ -343,6 +342,16 @@
         }
 
         .btn-qty:hover { background: var(--primary); color: white; }
+        .btn-qty:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background: white;
+            color: var(--text-muted);
+        }
+        .btn-qty:disabled:hover {
+            background: white;
+            color: var(--text-muted);
+        }
 
         .qty-display { text-align: center; }
         .qty-amount { font-size: 1.5rem; font-weight: 700; color: var(--dark); }
@@ -574,10 +583,10 @@
 
                     <div class="card">
                         <h2 class="card-title">Escolha a Quantidade</h2>
-                        <p style="color: var(--text-muted); font-size: 0.95rem;">Preço por kg: <strong>R$ 100,00</strong>. Pedido mínimo a partir de 500g.</p>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Preço por kg: <strong>R$ 100,00</strong>. Pedido mínimo a partir de 100g.</p>
 
                         <div class="qty-selector">
-                            <button type="button" class="btn-qty" onclick="changeQty(-100)">-</button>
+                            <button type="button" class="btn-qty" id="btnMinus" onclick="changeQty(-100)">-</button>
                             <div class="qty-display">
                                 <div class="qty-amount" id="qtyText">500 g</div>
                                 <span style="font-size: 0.8rem; color: var(--text-muted);">Incrementos de 100g</span>
@@ -839,11 +848,17 @@
             qtyText.textContent = qtyFormatted;
             summaryQty.textContent = qtyFormatted;
             summaryTotal.textContent = priceFormatted;
+
+            const btnMinus = document.getElementById('btnMinus');
+            if (btnMinus) {
+                btnMinus.disabled = orderState.grams <= 100;
+            }
         }
 
         function changeQty(delta) {
-            if (orderState.grams + delta >= 500) {
-                orderState.grams += delta;
+            const newGrams = orderState.grams + delta;
+            if (newGrams >= 100) {
+                orderState.grams = newGrams;
                 updateCalculations();
             }
         }
